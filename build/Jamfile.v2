@@ -1,0 +1,38 @@
+
+#          Copyright Oliver Kowalke 2014.
+# Distributed under the Boost Software License, Version 1.0.
+#    (See accompanying file LICENSE_1_0.txt or copy at
+#          http://www.boost.org/LICENSE_1_0.txt)
+
+import feature ;
+import modules ;
+import toolset ;
+
+project boost/rete
+    : requirements
+      <link>shared:<define>BOOST_RETE_DYN_LINK=1
+      <define>BOOST_RETE_SOURCE
+    : usage-requirements
+      <link>shared:<define>BOOST_RETE_DYN_LINK=1
+    : source-location ../src
+    ;
+
+lib boost_rete
+    : agenda.cpp
+      alpha_memory.cpp
+      beta_memory.cpp
+      declaration.cpp
+      instantiation.cpp
+      leaf_node.cpp
+      negative_node.cpp
+      one_input_node.cpp
+      root_node.cpp
+      tuple.cpp
+      tuple_join_node.cpp
+      tuple_node.cpp
+      two_input_node.cpp
+      type_node.cpp
+    : 
+    ;
+
+boost-install boost_rete ;
