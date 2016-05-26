@@ -14,7 +14,7 @@
 #include <boost/bind.hpp>
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/detail/config.hpp>
 #include <boost/rete/tuple.hpp>
@@ -33,7 +33,7 @@ T & fact_cast( fact &);
 
 class BOOST_RETE_DECL fact {
 private:
-	typedef boost::signal< void() >		tuple_sig_type;
+	typedef boost::signals2::signal< void() >		tuple_sig_type;
 
 	friend class tuple;
 	friend class tuple::apply;

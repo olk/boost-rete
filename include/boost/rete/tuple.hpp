@@ -12,7 +12,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 #include <boost/unordered_map.hpp> 
 
 #include <boost/rete/declaration.hpp>
@@ -51,7 +51,7 @@ private:
 	friend class beta_memory;
 	
 	map_type									_map;
-	std::list< boost::signals::connection >		_cons;
+	std::list< boost::signals2::connection >		_cons;
 	
 	tuple( declaration const&, fact_handle const&);
 	tuple( tuple const&, tuple const&);

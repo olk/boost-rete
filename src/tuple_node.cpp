@@ -82,7 +82,7 @@ tuple_node::detach() {
 		_cons.begin(),
 		_cons.end(),
 		std::mem_fun_ref( 
-			& boost::signals::connection::disconnect) ); 
+			& boost::signals2::connection::disconnect) ); 
 }
 
 }}

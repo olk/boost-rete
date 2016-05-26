@@ -9,7 +9,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/action.hpp>
 #include <boost/rete/detail/config.hpp>
@@ -42,7 +42,7 @@ private:
 	friend class two_input_node;
 	friend class negative_node;
 
-	std::list< boost::signals::connection > 	_cons;
+	std::list< boost::signals2::connection > 	_cons;
 	agenda_ptr									_ag_ptr;
 	action_ptr									_act_ptr;
 

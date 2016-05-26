@@ -12,7 +12,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/detail/config.hpp>
 
@@ -35,12 +35,12 @@ typedef boost::shared_ptr< type_node >		type_node_ptr;
 
 class BOOST_RETE_DECL type_node {
 private:
-	typedef boost::signal< void ( fact_handle &) >	children_func_type;
+	typedef boost::signals2::signal< void ( fact_handle &) >	children_func_type;
 	
 	friend class root_node;
 
 	children_func_type							_children;
-	std::list< boost::signals::connection >		_cons;
+	std::list< boost::signals2::connection >		_cons;
 	std::string									_info;
 
 	type_node( std::string const&);

@@ -9,7 +9,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/action.hpp>
 #include <boost/rete/detail/config.hpp>
@@ -34,7 +34,7 @@ private:
 
 	tuple_handle 					_th;
 	action_ptr						_act_ptr;
-	boost::signals::connection		_con;
+	boost::signals2::connection		_con;
 
 	instantiation( tuple_handle const&, action_ptr const&);
 

@@ -13,7 +13,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/declaration.hpp>
 #include <boost/rete/detail/config.hpp>
@@ -41,14 +41,14 @@ typedef boost::shared_ptr< one_input_node >		one_input_node_ptr;
 
 class BOOST_RETE_DECL two_input_node {
 private:
-	typedef boost::signal< void( tuple_handle &) >	children_sig_type;
+	typedef boost::signals2::signal< void( tuple_handle &) >	children_sig_type;
 
 	friend class alpha_memory;
 	friend class beta_memory;
 	friend class leaf_node;
 
 	children_sig_type							_children;
-	std::list< boost::signals::connection > 	_cons;
+	std::list< boost::signals2::connection > 	_cons;
 	std::set< declaration >						_decls;
 	std::set< declaration >						_decls_shared;
 	alpha_memory_ptr							_am_ptr;

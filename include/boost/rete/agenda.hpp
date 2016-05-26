@@ -9,7 +9,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/detail/config.hpp>
 
@@ -39,7 +39,7 @@ private:
         }
 	};
 	
-	typedef boost::signal< void(), topmost_only >		cs_sig_type;
+	typedef boost::signals2::signal< void(), topmost_only >		cs_sig_type;
 	
 	cs_sig_type		_cs;
 	

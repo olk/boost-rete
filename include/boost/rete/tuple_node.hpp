@@ -11,7 +11,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/declaration.hpp>
 #include <boost/rete/detail/config.hpp>
@@ -39,8 +39,8 @@ typedef boost::shared_ptr< tuple_node >			tuple_node_ptr;
 
 class BOOST_RETE_DECL tuple_node {
 private:	
-	typedef boost::signal< void ( tuple_handle &) >		children_sig_type;
-	typedef boost::signal<
+	typedef boost::signals2::signal< void ( tuple_handle &) >		children_sig_type;
+	typedef boost::signals2::signal<
         tuple_handle(),
         aggregate_values< std::list< tuple_handle > >
     >		                                            th_sig_type;
@@ -50,7 +50,7 @@ private:
 	friend class tuple_join_node;
 
 	children_sig_type							_children;
-	std::list< boost::signals::connection >		_cons;
+	std::list< boost::signals2::connection >		_cons;
 	th_sig_type									_items;
 	declaration									_decl;
 

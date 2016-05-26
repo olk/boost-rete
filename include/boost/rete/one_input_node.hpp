@@ -11,7 +11,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/detail/config.hpp>
 
@@ -48,7 +48,7 @@ private:
 	friend class negative_node;
 
 	alpha_memory_ptr							_am_ptr;
-	std::list< boost::signals::connection >		_cons;
+	std::list< boost::signals2::connection >		_cons;
 	condition_ptr								_cond_ptr;
 
 	one_input_node( tuple_node_ptr const&, condition_ptr const&);

@@ -12,7 +12,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/declaration.hpp>
 #include <boost/rete/detail/config.hpp>
@@ -41,8 +41,8 @@ typedef boost::shared_ptr< alpha_memory >		alpha_memory_ptr;
 
 class BOOST_RETE_DECL alpha_memory {
 private:
-	typedef boost::signal< void( tuple_handle &) >	    children_sig_type;
-	typedef boost::signal<
+	typedef boost::signals2::signal< void( tuple_handle &) >	    children_sig_type;
+	typedef boost::signals2::signal<
         tuple_handle(),
         aggregate_values< std::list< tuple_handle > >
     >		                                            th_sig_type;

@@ -18,7 +18,7 @@ namespace rete {
 void
 agenda::store( tuple_handle const& th, action_ptr const& act_ptr) { 
 	instantiation_ptr inst_ptr( instantiation::create( th, act_ptr) );
-	boost::signals::connection con( 
+	boost::signals2::connection con( 
 		_cs.connect(
 			act_ptr->priority(),
 			boost::bind(

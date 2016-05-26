@@ -9,7 +9,7 @@
 
 #include <boost/config.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/signal.hpp>
+#include <boost/signals2.hpp>
 
 #include <boost/rete/detail/config.hpp>
 
@@ -30,7 +30,7 @@ typedef boost::shared_ptr< root_node >	root_node_ptr;
 
 class BOOST_RETE_DECL root_node {
 private:
-	typedef boost::signal< void ( fact_handle &) >	children_sig_type;
+	typedef boost::signals2::signal< void ( fact_handle &) >	children_sig_type;
 
 	children_sig_type		_children;
 	
